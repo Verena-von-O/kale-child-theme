@@ -24,7 +24,7 @@ body.custom-background .main-wrapper{margin:0 auto;background-color:#ffffff;box-
 img.pull-left{margin-right:10px;margin-bottom:5px}
 img.pull-right{margin-left:10px;margin-bottom:5px}
 hr{border-top-color:#000;margin:35px 0}
-a, a:visited, a:active, a:focus{color:#000000;}
+a, a:visited, a:active, a:focus{color:#000000;text-decoration: none;}
 a:hover{color: #A1DBB2;text-decoration: none;}
 /*body.custom-background .main-wrapper{margin:0 auto;background-color:#ffffff;box-shadow:0 0 50px rgba(0,0,0,0.06)}*/
 

@@ -37,35 +37,37 @@ if(!isset($kale_frontpage_large_post)) $kale_frontpage_large_post = 'no';
         <div class="entry-date"><a href="<?php the_permalink(); ?>"><?php echo get_the_date(); ?></a></div>
         <?php } ?>
 
-             <?php
+        <?php
                 $mycontent = $post->post_content; 
                 $word = str_word_count(strip_tags($mycontent));
                 $m = floor($word / 200);
                 $s = floor($word % 200 / (200 / 60));
-                $est = $m . ' Minuten' . ($m == 1 ? '' : 's') ;
+                $est = $m . ' Minuten';
                 ?>
 
-    <p class="entry-readingtime">Lesezeit ~ <?php echo $est; ?></p>
-
-
+        <p class="entry-readingtime">Lesezeit ~ <?php echo $est; ?></p>
+        
         <?php if(get_the_title() != '') { ?>
         <h3 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
         <?php } else { ?>
         <h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php esc_html_e('Post ID: ', 'kale'); the_ID(); ?></a></h3>
         <?php } ?>
         
+        
         <?php if($kale_entry == 'full' ) { ?>
-        <div class="entry-summary"><?php the_content(); ?><?php wp_link_pages(); ?></div>
+        <div class="entry-summary"><?php the_excerpt(); ?><?php wp_link_pages(); ?></div>
         <?php } else { ?>
         <div class="entry-summary"><?php the_excerpt(); ?><?php wp_link_pages(); ?></div>
         <?php } ?>
+
+
         
         <?php if($kale_blog_feed_meta_show == 1) { ?>
         <div class="entry-meta">
             <?php 
             $kale_temp = array();
             if($kale_blog_feed_category_show == 1)  $kale_temp[] = '<div class="entry-category">' . get_the_category_list(', '). '</div>';
-            if($kale_blog_feed_author_show == 1)    $kale_temp[] = '<div class="entry-author">' . __('by ', 'kale') . get_the_author() . '</div>';
+            if($kale_blog_feed_author_show == 1)    $kale_temp[] = '<div class="entry-author">' . __('von ', 'kale') . get_the_author() . '</div>';
             if($kale_blog_feed_date_show == 1 && $kale_entry == 'vertical')     
                                                     $kale_temp[] = '<br /><div class="entry-date">' . get_the_date() . '</div>';
             if ( ! post_password_required() && comments_open() && $kale_blog_feed_comments_show == 1)  

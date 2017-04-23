@@ -45,10 +45,11 @@ $kale_sidebar_size = kale_get_option('kale_sidebar_size');
                 $word = str_word_count(strip_tags($mycontent));
                 $m = floor($word / 200);
                 $s = floor($word % 200 / (200 / 60));
-                $est = $m . ' Minuten' . ($m == 1 ? '' : 's') ;
+                $est = $m . ' Minuten';
                 ?>
 
-        <p class="entry-readingtime">Lesezeit ~ <?php echo $est; ?></p>
+            <p class="entry-readingtime">Lesezeit ~ <?php echo $est; ?></p>
+
 
             <?php $title = get_the_title(); ?>
             <?php if($title == '') { ?>
