@@ -641,7 +641,7 @@ padding: 10px 28px; font-size: 11px; font-weight: 300; text-transform: uppercase
 	.frontpage-banner .caption h2,
     .frontpage-slider .caption h2{font-size:22px;padding-bottom:10px;margin-bottom:15px}
     
-    .navbar-default{background-color: red}
+    .navbar-default{background-color: red;}
     .navbar-nav > li > a{font-size:14px;padding:23px 10px;letter-spacing:2px}
 
 	.widget ul {width: 70%;}
